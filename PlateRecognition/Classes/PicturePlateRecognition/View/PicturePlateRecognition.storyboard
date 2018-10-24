@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GFb-tX-4at">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picture Plate Recognition View Controller-->
+        <scene sceneID="2aP-35-8l0">
+            <objects>
+                <viewController storyboardIdentifier="PicturePlateRecognitionViewController" id="GFb-tX-4at" customClass="PicturePlateRecognitionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mpb-nR-0M9"/>
+                        <viewControllerLayoutGuide type="bottom" id="xwi-La-tKF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HAh-pS-vdr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="ACr-X9-w9h">
+                                <rect key="frame" x="67" y="118" width="240" height="288"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzV-gC-jVI">
+                                <rect key="frame" x="163.5" y="566" width="48" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Y4Z-F0-joD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-sW-HEo">
+                                <rect key="frame" x="139" y="456" width="96" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QhW-i1-KoX"/>
+                                </constraints>
+                                <state key="normal" title="Select Picture"/>
+                                <connections>
+                                    <action selector="selectPictureButtonClick:" destination="GFb-tX-4at" eventType="touchUpInside" id="rTX-iE-E7l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-3U-LT9">
+                                <rect key="frame" x="151" y="511" width="72" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="g6m-fq-4Vi"/>
+                                </constraints>
+                                <state key="normal" title="Recognize"/>
+                                <connections>
+                                    <action selector="recognizeButtonClick:" destination="GFb-tX-4at" eventType="touchUpInside" id="6eu-Uz-fo8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NzV-gC-jVI" firstAttribute="top" secondItem="MTy-3U-LT9" secondAttribute="bottom" constant="25" id="3AP-cS-udE"/>
+                            <constraint firstItem="ACr-X9-w9h" firstAttribute="centerX" secondItem="X4z-sW-HEo" secondAttribute="centerX" id="3Cj-lN-rw9"/>
+                            <constraint firstItem="ACr-X9-w9h" firstAttribute="top" secondItem="Mpb-nR-0M9" secondAttribute="bottom" constant="98" id="66l-a9-alX"/>
+                            <constraint firstItem="MTy-3U-LT9" firstAttribute="top" secondItem="X4z-sW-HEo" secondAttribute="bottom" constant="25" id="DXL-pc-Xu5"/>
+                            <constraint firstItem="X4z-sW-HEo" firstAttribute="top" secondItem="ACr-X9-w9h" secondAttribute="bottom" constant="50" id="MX3-wf-7ew"/>
+                            <constraint firstItem="X4z-sW-HEo" firstAttribute="centerX" secondItem="MTy-3U-LT9" secondAttribute="centerX" id="VRq-c0-v9R"/>
+                            <constraint firstItem="ACr-X9-w9h" firstAttribute="leading" secondItem="HAh-pS-vdr" secondAttribute="leadingMargin" constant="51" id="ce2-9e-BTk"/>
+                            <constraint firstItem="ACr-X9-w9h" firstAttribute="centerX" secondItem="HAh-pS-vdr" secondAttribute="centerX" id="jIV-uh-HGI"/>
+                            <constraint firstItem="NzV-gC-jVI" firstAttribute="centerX" secondItem="HAh-pS-vdr" secondAttribute="centerX" id="oYZ-9N-BIM"/>
+                            <constraint firstItem="xwi-La-tKF" firstAttribute="top" secondItem="NzV-gC-jVI" secondAttribute="bottom" constant="80" id="vBg-2Q-NSh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ACr-X9-w9h" id="4gC-TG-NIE"/>
+                        <outlet property="resultLabel" destination="NzV-gC-jVI" id="XSq-Be-cQN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFK-uD-wB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="-192"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image1" width="1000" height="600"/>
+    </resources>
+</document>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GFb-tX-4at">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Realtime Plate Recognition View Controller-->
+        <scene sceneID="2aP-35-8l0">
+            <objects>
+                <viewController storyboardIdentifier="RealtimePlateRecognitionViewController" id="GFb-tX-4at" customClass="RealtimePlateRecognitionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mpb-nR-0M9"/>
+                        <viewControllerLayoutGuide type="bottom" id="xwi-La-tKF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HAh-pS-vdr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-0V-tPW">
+                                <rect key="frame" x="36" y="320.5" width="303" height="170.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HEg-0V-tPW" secondAttribute="height" multiplier="16:9" id="ZlA-Td-I3H"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-iX-Za5">
+                                <rect key="frame" x="163" y="541" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4D-Wd-LGA">
+                                <rect key="frame" x="50" y="584" width="34" height="31"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="GFb-tX-4at" eventType="touchUpInside" id="zkO-HH-lGL"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-IB-vu8">
+                                <rect key="frame" x="36" y="70" width="303" height="170.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cee-IB-vu8" secondAttribute="height" multiplier="16:9" id="Te4-ej-frK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-T5-jvS">
+                                <rect key="frame" x="295" y="584.5" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonClick:" destination="GFb-tX-4at" eventType="touchUpInside" id="8DY-cN-PeB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ElA-iX-Za5" firstAttribute="centerX" secondItem="HAh-pS-vdr" secondAttribute="centerX" id="1mv-96-UjA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HEg-0V-tPW" secondAttribute="trailing" constant="20" id="28u-bG-ecv"/>
+                            <constraint firstItem="a4D-Wd-LGA" firstAttribute="baseline" secondItem="bfA-T5-jvS" secondAttribute="baseline" id="5II-gB-XWI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bfA-T5-jvS" secondAttribute="trailing" constant="32" id="5hP-B0-EuH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cee-IB-vu8" secondAttribute="trailing" constant="20" id="Afw-iH-zzs"/>
+                            <constraint firstItem="Cee-IB-vu8" firstAttribute="leading" secondItem="HAh-pS-vdr" secondAttribute="leadingMargin" constant="20" id="BcZ-jn-aTA"/>
+                            <constraint firstItem="Cee-IB-vu8" firstAttribute="top" secondItem="Mpb-nR-0M9" secondAttribute="bottom" constant="50" id="JGj-iJ-AjE"/>
+                            <constraint firstItem="a4D-Wd-LGA" firstAttribute="leading" secondItem="HAh-pS-vdr" secondAttribute="leadingMargin" constant="34" id="MYD-bo-giM"/>
+                            <constraint firstItem="HEg-0V-tPW" firstAttribute="top" secondItem="Cee-IB-vu8" secondAttribute="bottom" constant="80" id="VpC-kv-mOG"/>
+                            <constraint firstItem="a4D-Wd-LGA" firstAttribute="top" secondItem="HEg-0V-tPW" secondAttribute="bottom" constant="93" id="Yuf-YF-PbX"/>
+                            <constraint firstItem="xwi-La-tKF" firstAttribute="top" secondItem="a4D-Wd-LGA" secondAttribute="bottom" constant="52" id="dbz-Mc-Loy"/>
+                            <constraint firstItem="HEg-0V-tPW" firstAttribute="leading" secondItem="HAh-pS-vdr" secondAttribute="leadingMargin" constant="20" id="fcj-R5-UQ1"/>
+                            <constraint firstItem="ElA-iX-Za5" firstAttribute="top" secondItem="HEg-0V-tPW" secondAttribute="bottom" constant="50" id="g5g-qF-a4n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="generateImageView" destination="HEg-0V-tPW" id="heU-Qa-65U"/>
+                        <outlet property="previewView" destination="Cee-IB-vu8" id="fCs-Aq-eQ2"/>
+                        <outlet property="resultLabel" destination="ElA-iX-Za5" id="8jL-Ie-egt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFK-uD-wB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245.59999999999999" y="-192.05397301349328"/>
+        </scene>
+    </scenes>
+</document>
